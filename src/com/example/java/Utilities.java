@@ -11,35 +11,29 @@ public class Utilities {
         Scanner scanner = new Scanner(System.in);
         input = scanner.nextLine();
 
-        BigDecimal value = new BigDecimal(input);
-        return value;
+        return new BigDecimal(input);
     }
 
     public static String decisions(String prompt) {
         System.out.print(prompt);
         Scanner scanner = new Scanner(System.in);
-        String input = scanner.nextLine();
-        return input;
+        return scanner.nextLine();
     }
 
     public static BigDecimal add(BigDecimal value1, BigDecimal value2) {
-        BigDecimal result = value1.add(value2);
-        return result;
+        return value1.add(value2);
     }
 
     public static BigDecimal subtract(BigDecimal value1, BigDecimal value2) {
-        BigDecimal result = value1.subtract(value2);
-        return result;
+        return value1.subtract(value2);
     }
 
     public static BigDecimal multiply(BigDecimal value1, BigDecimal value2) {
-        BigDecimal result = value1.multiply(value2);
-        return result;
+        return value1.multiply(value2);
     }
 
     public static BigDecimal divide(BigDecimal value1, BigDecimal value2) {
-        BigDecimal result = value1.divide(value2);
-        return result;
+        return value1.divide(value2);
     }
 
     public static void calculation(StringBuilder stringbuilder, String operation) {

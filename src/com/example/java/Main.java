@@ -16,7 +16,7 @@ public class Main {
 
         aa:while (true) {
 
-            while (true) {
+            aa1:while (true) {
 
                 try {
                     //WE INPUT VALUE1 HERE
@@ -34,7 +34,7 @@ public class Main {
                 break;
             }
 
-            while (true) {
+            aa2:while (true) {
                 //WE SELECT OPERATOR HERE
                 operation = Utilities.decisions("Select an Operation ( +, -, *, / ): ");
 
@@ -72,7 +72,7 @@ public class Main {
 
                 Utilities.calculation(stringbuilder, operation);
 
-                while (true) {
+                bb2:while (true) {
                     String decision = Utilities.decisions("==> Select an operation ( +  - / *) to " +
                         "perform a calculation with this result (" + Utilities.result + "),\n"
                         + "==> To start a new calculation, press 'n'\n"
