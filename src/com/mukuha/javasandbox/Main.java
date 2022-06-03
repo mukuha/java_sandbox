@@ -2,9 +2,15 @@ package com.mukuha.javasandbox;
 
 import java.math.BigDecimal;
 
+/**
+ * Main class that starts the application
+ */
 public class Main {
     private static int valueNumber = 1;
 
+    /**
+     * Its main() method, and the only method in this class
+     */
     public static void main(String[] args) {
         System.out.println("----------------------------------------------------");
         System.out.println("ADDITION | SUBTRACTION | MULTIPLICATION | DIVISION");
@@ -66,12 +72,13 @@ public class Main {
                 //All calculations for all operators are done here
                 calculation.setResult();
 
-                //Printing of the results to the console happens here
+                //Printing of results to the console happens here
                 System.out.println("----------------------------------------------------");
                 System.out.println(calculation.value1 + " + " + calculation.value2 + " = " + calculation.result);
                 System.out.println("----------------------------------------------------");
 
-                //Determining what next after performing calculation and printing results is performed by this loop
+                //Determining the next move after performing calculation and
+                //printing results is determined by this loop
                 while (true) {
                     calculation.setDecision("==> Select an operation ( +  - / *) to " +
                             "perform a calculation with this result (" + calculation.getResult() + "),\n"
@@ -80,11 +87,13 @@ public class Main {
                     switch (calculation.getDecision()) {
                         case "+", "-", "*", "/" -> {
 
-                            //Resetting the value of value1 to result of previously completed calculation
+                            //Sets the value of value1 to the result of previous
+                            //calculation to get ready for the next calculation
                             BigDecimal value1Resetter = calculation.getResult();
                             calculation.setValue1(value1Resetter);
 
-                            //Resetting operator to be used in the next calculation to the user's decision.
+                            //Sets the operator to the decision made by user to
+                            //get ready for the next calculation
                             calculation.operation = calculation.decision;
                             continue bb;
                         }case "n", "N" -> {

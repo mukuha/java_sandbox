@@ -1,52 +1,75 @@
-package com.mukuha.javasandbox;/*This class is responsible for collecting input data and offering
-ways of accessing that data from the rest of the application*/
+package com.mukuha.javasandbox;
 
 import java.math.BigDecimal;
 import java.util.Scanner;
+
+/**
+ * This class collects input data and offers ways of
+ * accessing that data from the rest of the application
+ */
 public class Data {
 
-    //Instance variables
+    /**
+     *These are fields
+     */
     public BigDecimal value1;
     public String operation;
     public BigDecimal value2;
     public BigDecimal result;
     public String decision;
 
-    //No-argument constructor This is the constructor
+    /**
+     *This is the constructor, a no-argument constructor
+     */
     public Data() {}
 
-    //Setter method for value1
+    /**
+     * This is the setter method for value1
+     * @param prompt a prompt that is printed in the console each time the method is called
+     */
     public void setValue1(String prompt) {
         System.out.print(prompt);
         Scanner scanner = new Scanner(System.in);
         this.value1 = new BigDecimal(scanner.nextLine());
     }
 
-    //Overloading
+    /**
+     * This method overloads the setter method for the value1 field
+     */
     public void setValue1(BigDecimal value1Resetter) {
         this.value1 = value1Resetter;
     }
 
-    //Setter method for operation
+    /**
+     * This is the setter method for operation
+     * @param prompt a prompt that is printed in the console each time the method is called
+     */
     public void setOperation(String prompt) {
         System.out.print(prompt);
         Scanner scanner = new Scanner(System.in);
         this.operation = scanner.nextLine();
     }
 
-    //Getter method for operation
+    /**
+     * This is the getter method for operation
+     */
     public String getOperation() {
         return operation;
     }
 
-    //Setter method for value2
+    /**
+     * This is the setter method for value2
+     * @param prompt a prompt that is printed in the console each time the method is called
+     */
     public void setValue2(String prompt) {
         System.out.print(prompt);
         Scanner scanner = new Scanner(System.in);
         this.value2 = new BigDecimal(scanner.nextLine());
     }
 
-    //Setter method for result
+    /**
+     * This is the setter method for result
+     */
     public void setResult() {
         switch (operation) {
             case "+" -> result = MathHelper.add(value1, value2);
@@ -56,16 +79,23 @@ public class Data {
         }
     }
 
-    //Getter method for result
+    /**
+     * This is the getter method for result
+     */
     public BigDecimal getResult() { return result; }
 
-    //Setter method for decision
+    /**
+     * This is the setter method for decision
+     * @param prompt a prompt that is printed in the console each time the method is called
+     */
     public void setDecision(String prompt) {
         System.out.print(prompt);
         Scanner scanner = new Scanner(System.in);
         this.decision=scanner.nextLine();
     }
 
-    //Getter method for decision
+    /**
+     * This is the getter method for decision
+     */
     public String getDecision() { return decision; }
 }
