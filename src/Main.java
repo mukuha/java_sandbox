@@ -18,7 +18,7 @@ public class Main {
 
                 try {
                     //WE INPUT VALUE1 HERE
-                    value1 = Utilities.getInput("Enter value" + valueNumber + ": ");
+                    value1 = Data.getInput("Enter value" + valueNumber + ": ");
                 } catch (NumberFormatException e) {
                     System.out.println("==>The value you entered is not a number\n"
                             + "==>Please enter a number");
@@ -34,7 +34,7 @@ public class Main {
 
             while (true) {
                 //WE SELECT OPERATOR HERE
-                operation = Utilities.decisions("Select an Operation ( +, -, *, / ): ");
+                operation = Data.decisions("Select an Operation ( +, -, *, / ): ");
 
                 switch (operation) {
                     case "+", "-", "*", "/" -> {
@@ -55,7 +55,7 @@ public class Main {
             bb:while (true) {
                 //WE INPUT VALUE2 HERE
                 try {
-                    value2 = Utilities.getInput("Enter value" + ++valueNumber + ": ");
+                    value2 = Data.getInput("Enter value" + ++valueNumber + ": ");
                 } catch (NumberFormatException e) {
                     System.out.println("==>The value you entered is not a number\n"
                             + "==>Please enter a number");
@@ -68,16 +68,16 @@ public class Main {
                     continue;
                 }
 
-                Utilities.calculation(stringbuilder, operation);
+                Data.calculation(stringbuilder, operation);
 
                 while (true) {
-                    String decision = Utilities.decisions("==> Select an operation ( +  - / *) to " +
-                        "perform a calculation with this result (" + Utilities.result + "),\n"
+                    String decision = Data.decisions("==> Select an operation ( +  - / *) to " +
+                        "perform a calculation with this result (" + Data.result + "),\n"
                         + "==> To start a new calculation, press 'n'\n"
                         + "==> To exit the application, press 'e': ");
                     switch (decision) {
                         case "+", "-", "*", "/" -> {
-                            value1 = Utilities.result;
+                            value1 = Data.result;
                             operation = decision;
                             continue bb;
                         }case "n", "N" -> {

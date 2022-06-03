@@ -1,7 +1,7 @@
 import java.math.BigDecimal;
 import java.util.Scanner;
 
-public class Utilities {
+public class Data {
     public static String input;
     public static BigDecimal result;
     public static BigDecimal getInput(String prompt) {
