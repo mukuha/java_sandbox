@@ -3,13 +3,13 @@ package com.mukuha.javasandbox;
 import java.math.BigDecimal;
 
 /**
- * Main class that starts the application
+ * This is the Main class that starts the application
  */
 public class Main {
     private static int valueNumber = 1;
 
     /**
-     * Its main() method, and the only method in this class
+     * The main() method, and the only method in this class
      */
     public static void main(String[] args) {
         System.out.println("----------------------------------------------------");

@@ -10,12 +10,28 @@ import java.util.Scanner;
 public class Data {
 
     /**
-     *These are fields
+     *Stores the first value that the user types that is a numeric value
      */
     public BigDecimal value1;
+
+    /**
+     *Stores the operation the user selects
+     */
     public String operation;
+
+    /**
+     *Stores the second value that the user types that is a numeric value
+     */
     public BigDecimal value2;
+
+    /**
+     *Stores results of calculations
+     */
     public BigDecimal result;
+
+    /**
+     *Stores decisions the user makes time to time
+     */
     public String decision;
 
     /**
@@ -34,7 +50,7 @@ public class Data {
     }
 
     /**
-     * This method overloads the setter method for the value1 field
+     * This method overloads the setter method for value1
      */
     public void setValue1(BigDecimal value1Resetter) {
         this.value1 = value1Resetter;
