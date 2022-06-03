@@ -39,10 +39,10 @@ public class Main {
             while (true) {
                 //Operator to use is selected here
                 calculation.setOperation("Select an Operation ( +, -, *, / ): ");
-                switch (calculation.getOperation()) {
+                switch (calculation.operation) {
                     case "+", "-", "*", "/" -> {}
                     default -> {
-                        System.out.println("==> '" + calculation.getOperation() + "' is unrecognized operation by this calculator\n"
+                        System.out.println("==> '" + calculation.operation + "' is unrecognized operation by this calculator\n"
                                 + "This simple calc only supports the following four operations:\n"
                                 + "----------------------------------------------------\n"
                                 + "Addition | Subtraction | Multiplication | Division\n"
@@ -81,15 +81,15 @@ public class Main {
                 //printing results is determined by this loop
                 while (true) {
                     calculation.setDecision("==> Select an operation ( +  - / *) to " +
-                            "perform a calculation with this result (" + calculation.getResult() + "),\n"
+                            "perform a calculation with this result (" + calculation.result + "),\n"
                             + "==> To start a new calculation, press 'n'\n"
                             + "==> To exit the application, press 'e': ");
-                    switch (calculation.getDecision()) {
+                    switch (calculation.decision) {
                         case "+", "-", "*", "/" -> {
 
                             //Sets the value of value1 to the result of previous
                             //calculation to get ready for the next calculation
-                            BigDecimal value1Resetter = calculation.getResult();
+                            BigDecimal value1Resetter = calculation.result;
                             calculation.setValue1(value1Resetter);
 
                             //Sets the operator to the decision made by user to

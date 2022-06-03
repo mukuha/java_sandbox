@@ -50,14 +50,7 @@ public class Data {
         this.operation = scanner.nextLine();
     }
 
-    /**
-     * This is the getter method for operation
-     */
-    public String getOperation() {
-        return operation;
-    }
-
-    /**
+        /**
      * This is the setter method for value2
      * @param prompt a prompt that is printed in the console each time the method is called
      */
@@ -80,11 +73,6 @@ public class Data {
     }
 
     /**
-     * This is the getter method for result
-     */
-    public BigDecimal getResult() { return result; }
-
-    /**
      * This is the setter method for decision
      * @param prompt a prompt that is printed in the console each time the method is called
      */
@@ -93,9 +81,4 @@ public class Data {
         Scanner scanner = new Scanner(System.in);
         this.decision=scanner.nextLine();
     }
-
-    /**
-     * This is the getter method for decision
-     */
-    public String getDecision() { return decision; }
 }
