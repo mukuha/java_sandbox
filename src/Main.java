@@ -1,5 +1,3 @@
-package com.example.java;
-
 import java.math.BigDecimal;
 
 public class Main {
