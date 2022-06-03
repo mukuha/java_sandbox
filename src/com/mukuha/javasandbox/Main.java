@@ -1,3 +1,5 @@
+package com.mukuha.javasandbox;
+
 import java.math.BigDecimal;
 
 public class Main {

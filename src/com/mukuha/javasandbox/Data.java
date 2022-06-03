@@ -1,4 +1,4 @@
-/*This class is responsible for collecting input data and offering
+package com.mukuha.javasandbox;/*This class is responsible for collecting input data and offering
 ways of accessing that data from the rest of the application*/
 
 import java.math.BigDecimal;

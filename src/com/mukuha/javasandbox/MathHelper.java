@@ -1,4 +1,4 @@
-//This class house methods that are called to do the actual computation
+package com.mukuha.javasandbox;//This class house methods that are called to do the actual computation
 
 import java.math.BigDecimal;
 public class MathHelper {
