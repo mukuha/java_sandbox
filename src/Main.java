@@ -1,24 +1,21 @@
 import java.math.BigDecimal;
 
 public class Main {
-    public static BigDecimal value1;
-    public static BigDecimal value2;
-    public static String operation;
-    public static int valueNumber = 1;
+    private static int valueNumber = 1;
 
     public static void main(String[] args) {
         System.out.println("----------------------------------------------------");
         System.out.println("ADDITION | SUBTRACTION | MULTIPLICATION | DIVISION");
         System.out.println("----------------------------------------------------");
-        StringBuilder stringbuilder = new StringBuilder();
+
+        Data calculation = new Data();
 
         aa:while (true) {
 
             while (true) {
-
                 try {
-                    //WE INPUT VALUE1 HERE
-                    value1 = Data.getInput("Enter value" + valueNumber + ": ");
+                    //Value1 is inputted here
+                    calculation.setValue1("Enter value" + valueNumber + ": ");
                 } catch (NumberFormatException e) {
                     System.out.println("==>The value you entered is not a number\n"
                             + "==>Please enter a number");
@@ -28,20 +25,16 @@ public class Main {
                             + "==>Enter value1");
                     continue;
                 }
-
                 break;
             }
 
             while (true) {
-                //WE SELECT OPERATOR HERE
-                operation = Data.decisions("Select an Operation ( +, -, *, / ): ");
-
-                switch (operation) {
-                    case "+", "-", "*", "/" -> {
-
-                    }
+                //Operator to use is selected here
+                calculation.setOperation("Select an Operation ( +, -, *, / ): ");
+                switch (calculation.getOperation()) {
+                    case "+", "-", "*", "/" -> {}
                     default -> {
-                        System.out.println("==> '" + operation + "' is unrecognized operation by this calculator\n"
+                        System.out.println("==> '" + calculation.getOperation() + "' is unrecognized operation by this calculator\n"
                                 + "This simple calc only supports the following four operations:\n"
                                 + "----------------------------------------------------\n"
                                 + "Addition | Subtraction | Multiplication | Division\n"
@@ -53,9 +46,9 @@ public class Main {
             }
 
             bb:while (true) {
-                //WE INPUT VALUE2 HERE
+                //Value2 is inputted here
                 try {
-                    value2 = Data.getInput("Enter value" + ++valueNumber + ": ");
+                    calculation.setValue2("Enter value" + ++valueNumber + ": ");
                 } catch (NumberFormatException e) {
                     System.out.println("==>The value you entered is not a number\n"
                             + "==>Please enter a number");
@@ -68,17 +61,24 @@ public class Main {
                     continue;
                 }
 
-                Data.calculation(stringbuilder, operation);
+                //All calculations for all operators are done here
+                calculation.setResult();
 
+                //Printing of the results to the console happens here
+                System.out.println("----------------------------------------------------");
+                System.out.println(calculation.value1 + " + " + calculation.value2 + " = " + calculation.result);
+                System.out.println("----------------------------------------------------");
+
+                //Determining what next after performing calculation and printing results is performed by this loop
                 while (true) {
-                    String decision = Data.decisions("==> Select an operation ( +  - / *) to " +
-                        "perform a calculation with this result (" + Data.result + "),\n"
-                        + "==> To start a new calculation, press 'n'\n"
-                        + "==> To exit the application, press 'e': ");
-                    switch (decision) {
+                    calculation.setDecision("==> Select an operation ( +  - / *) to " +
+                            "perform a calculation with this result (" + calculation.getResult() + "),\n"
+                            + "==> To start a new calculation, press 'n'\n"
+                            + "==> To exit the application, press 'e': ");
+                    switch (calculation.getDecision()) {
                         case "+", "-", "*", "/" -> {
-                            value1 = Data.result;
-                            operation = decision;
+                            BigDecimal value1Resetter = calculation.getResult();
+                            calculation.setValue1(value1Resetter);
                             continue bb;
                         }case "n", "N" -> {
                             valueNumber = 1;
@@ -92,12 +92,9 @@ public class Main {
                                 Addition | Subtraction | Multiplication | Division
                                 ----------------------------------------------------""");
                     }
-
                 }
             }
-
         }
-
         System.out.println("-------------------------------");
         System.out.println("Bye bye!");
         System.out.println("-------------------------------");
@@ -106,4 +103,3 @@ public class Main {
         System.out.println();
     }
 }
-
