@@ -7,12 +7,12 @@ public class Data {
 
     //Instance variables
     public BigDecimal value1;
-    private String operation;
+    public String operation;
     public BigDecimal value2;
     public BigDecimal result;
-    private String decision;
+    public String decision;
 
-    //No-argument constructor
+    //No-argument constructor This is the constructor
     public Data() {}
 
     //Setter method for value1

@@ -77,8 +77,13 @@ public class Main {
                             + "==> To exit the application, press 'e': ");
                     switch (calculation.getDecision()) {
                         case "+", "-", "*", "/" -> {
+
+                            //Resetting the value of value1 to result of previously completed calculation
                             BigDecimal value1Resetter = calculation.getResult();
                             calculation.setValue1(value1Resetter);
+
+                            //Resetting operator to be used in the next calculation to the user's decision.
+                            calculation.operation = calculation.decision;
                             continue bb;
                         }case "n", "N" -> {
                             valueNumber = 1;
