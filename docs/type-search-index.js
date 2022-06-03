@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"com.mukuha.javasandbox","l":"Data"},{"p":"com.mukuha.javasandbox","l":"Main"},{"p":"com.mukuha.javasandbox","l":"MathHelper"}];updateSearchResults();
